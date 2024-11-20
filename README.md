@@ -37,8 +37,8 @@ Ensure you have the following installed:
 
 1. **Clone the repository**
     ```sh
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone <https://github.com/dimipash/AI_Image_Creator.git>
+    cd <AI_Image_Creator>
     ```
 
 2. **Install required packages**
