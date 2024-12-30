@@ -1,5 +1,8 @@
 # AI Image Creator
 
+![AI Image Creator](static/icon.png) 
+![AI Image Creator](static/icon2.png)
+
 A Streamlit web application for generating AI-powered images using DALL-E 3.
 
 ## Features
