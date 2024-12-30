@@ -1,98 +1,72 @@
 # AI Image Creator
 
-![AI Image Creator](static/icon.png) 
-![AI Image Creator](static/icon2.png) 
-
-## Table of Contents
-- [Description](#description)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Tips](#tips)
-- [License](#license)
-
-## Description
-
-AI Image Creator is a web application that allows users to generate stunning images based on textual descriptions using OpenAI’s DALL-E 3 model. Whether you need unique artwork, visual content ideas, or just some creative fun, this tool provides an easy and delightful way to create visual art.
+A Streamlit web application for generating AI-powered images using DALL-E 3.
 
 ## Features
 
-- **Text-to-Image Generation**: Describe your image and generate multiple variations.
-- **Interactive Interface**: User-friendly interface built with Streamlit.
-- **Carousel Display**: View generated images in an interactive carousel.
-- **Full-Sized Image View**: Click to view and download full-sized images.
-- **Customizable Styles**: Add custom CSS for personalized styling.
+- Generate high-quality images from text descriptions
+- Choose between vivid (dramatic) or natural (realistic) styles
+- Select image quality (Standard or HD)
+- Choose image size (1024x1024, 1024x1792, or 1792x1024)
+- Generate up to 4 variations of an image
+- Download generated images
+- View generation history
+- Rate limiting to prevent API abuse
 
-## Installation
+## Setup
 
-### Prerequisites
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dimipash/AI_Image_Creator.git
+   cd AI_Image_Creator
+   ```
 
-Ensure you have the following installed:
-- Python 3.12.7
-- pip (Python package installer)
-- An OpenAI API key
+2. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-### Steps
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-1. **Clone the repository**
-    ```sh
-    git clone <https://github.com/dimipash/AI_Image_Creator.git>
-    cd <AI_Image_Creator>
-    ```
+4. Create a `.env` file and add your OpenAI API key:
+   ```
+   OPENAI_API_KEY=your_api_key_here
+   ```
 
-2. **Install required packages**
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-3. **Set up environment variables**
-    Create a `.env` file in the root directory and add your OpenAI API key:
-    ```env
-    OPENAI_API_KEY=your_openai_api_key_here
-    ```
-
-## Usage
-
-1. **Run the application**
-    ```sh
-    streamlit run app.py
-    ```
-
-2. **Open the web browser**
-    Navigate to `http://localhost:8501` in your web browser to access the app.
-
-3. **Generate Images**
-    - Enter a detailed description of the image you want to create.
-    - Select the number of images to generate.
-    - Click the "Generate" button to create your images.
+5. Run the application:
+   ```bash
+   streamlit run app.py
+   ```
 
 ## Configuration
 
-### Streamlit Configurations
+The application can be customized through the following options:
 
-- **Page Title**: Set in `PAGE_TITLE`.
-- **Page Icon**: Set in `PAGE_ICON`.
-- **Layout**: Set in `LAYOUT`.
-- **Sidebar State**: Set in `SIDEBAR_STATE`.
+- **Art Style**: Choose between 'vivid' (more dramatic) or 'natural' (more realistic)
+- **Quality**: Standard or HD
+- **Size**: 1024x1024, 1024x1792, or 1792x1024
+- **Number of Images**: Generate 1-4 variations
 
-### Custom CSS
+## UI Features
 
-Place your custom CSS in `static/style.css` to style the app layout and components.
+- Modern dark theme download button with vivid text color
+- Responsive design for mobile and desktop
+- Loading animations
+- Tips for better results
+- Generation history display
 
-## Tips
+## Requirements
 
-1. Be specific and detailed in your descriptions.
-2. Include art style preferences.
-3. Mention colors and lighting.
-4. Describe the composition and contextual elements.
-
-These tips help in generating more accurate and visually appealing images.
+- Python 3.8+
+- OpenAI API key
+- Streamlit
+- python-dotenv
+- pydantic
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
-
----
-
-*Made with 💜 using DALL-E 3 | © 2024*
+MIT License
