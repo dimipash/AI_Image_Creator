@@ -1,124 +1,101 @@
-/* Global styles */
-.main {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    padding: 2rem;
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Button styles */
-.stButton>button {
-    width: 100%;
-    height: 3rem;
-    background-color: #238636;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-}
-.stButton>button:hover {
-    background-color: #2ea043;
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(46, 160, 67, 0.4);
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* Title styles */
 .title-text {
-    font-size: 3rem;
-    font-weight: bold;
-    background: linear-gradient(45deg, #f0f, #0ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding: 1rem 0;
-    text-shadow: 0 0 10px rgba(255,0,255,0.3);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
 }
 
 .subtitle-text {
-    color: #8b949e;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    color: #64748b;
     margin-bottom: 2rem;
 }
 
-/* Container styles */
 .input-container {
-    background-color: #161b22;
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid #30363d;
-    box-shadow: 0 0 20px rgba(255,0,255,0.1);
-    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1.5rem;
 }
 
-/* Override Streamlit defaults */
-.stTextArea textarea {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    border: 1px solid #30363d;
-}
-.stTextArea textarea:focus {
-    border-color: #58a6ff;
-    box-shadow: 0 0 10px rgba(88,166,255,0.3);
-}
-
-.stSlider {
-    color: #58a6ff;
-}
-
-.stSlider .slider {
-    background-color: #161b22;
-}
-
-/* Headers */
-h1, h2, h3 {
-    color: #c9d1d9;
-}
-
-/* Links */
-a {
-    color: #58a6ff;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* Warning messages */
-.stAlert {
-    background-color: #161b22;
-    border: 1px solid #f85149;
-    color: #c9d1d9;
-}
-
-/* Spinner */
-.stSpinner > div {
-    border-top-color: #58a6ff !important;
-}
-
-/* Tips section */
 .tips-container {
-    border-left: 3px solid #58a6ff;
-    padding-left: 1rem;
+    background: #f1f5f9;
+    padding: 1rem;
+    border-radius: calc(var(--border-radius) - 2px);
+    margin-top: 1rem;
 }
 
-/* Download section */
+.tips-container h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
 .download-button {
-    background-color: #238636;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    margin: 0.5rem 0;
     display: inline-block;
-}
-.download-button:hover {
-    background-color: #2ea043;
+    background-color: #1e293b;
+    color: #ff6b6b;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
     text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin: 0.5rem 0;
+    border: 1px solid #334155;
 }
 
-/* Footer */
+.download-button:hover {
+    background-color: #0f172a;
+    color: #ff4757;
+}
+
 .footer {
     text-align: center;
-    color: #8b949e;
-    border-top: 1px solid #30363d;
-    padding-top: 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title-text {
+        font-size: 2rem;
+    }
+    
+    .subtitle-text {
+        font-size: 1rem;
+    }
+    
+    .input-container {
+        padding: 1rem;
+    }
+}
+
+/* Animation for loading state */
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.stSpinner > div {
+    animation: pulse 1.5s infinite;
+    background-color: var(--primary-color);
 }
